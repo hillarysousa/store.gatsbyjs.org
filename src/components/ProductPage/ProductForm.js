@@ -238,15 +238,17 @@ class ProductForm extends Component {
               {isOutOfStock ? 'Out of Stock' : 'Add to Cart'}
               {isOutOfStock ? <MdSentimentDissatisfied /> : <MdShoppingCart />}
             </AddToCartButton>
-            <InfoLinks>
-              <Link to="/product-details?fromProduct#materials-fit">
-                <span>Materials &amp; Fit</span>
-              </Link>
-              &nbsp; • &nbsp;
-              <Link to="/product-details?fromProduct#care-instructions">
-                <span>Care instructions</span>
-              </Link>
-            </InfoLinks>
+            {hasVariants && (
+              <InfoLinks>
+                <Link to="/product-details?fromProduct#materials-fit">
+                  <span>Materials &amp; Fit</span>
+                </Link>
+                &nbsp; • &nbsp;
+                <Link to="/product-details?fromProduct#care-instructions">
+                  <span>Care instructions</span>
+                </Link>
+              </InfoLinks>
+            )}
           </Form>
         )}
       </StoreContext.Consumer>
